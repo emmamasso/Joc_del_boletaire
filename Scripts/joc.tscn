@@ -367,16 +367,14 @@ sources/1 = SubResource("TileSetAtlasSource_112pm")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uv317"]
 size = Vector2(47, 48)
 
-[sub_resource type="Gradient" id="Gradient_mkmxp"]
+[sub_resource type="Gradient" id="Gradient_sdjn7"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_y8e1x"]
-gradient = SubResource("Gradient_mkmxp")
-width = 60
-height = 60
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jkxq3"]
+gradient = SubResource("Gradient_sdjn7")
 fill = 1
-fill_from = Vector2(0.529915, 0.487179)
-fill_to = Vector2(0.713675, 0.897436)
+fill_from = Vector2(0.508547, 0.525641)
+fill_to = Vector2(0.820513, 0.136752)
 
 [node name="Joc" type="Node2D"]
 
@@ -407,18 +405,22 @@ position = Vector2(-15, 338)
 scale = Vector2(3, 3)
 texture = ExtResource("3_thxji")
 
-[node name="Llum" type="PointLight2D" parent="CharacterBody2D"]
-texture_filter = 1
-texture_repeat = 1
-position = Vector2(24, 323)
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(27, 315)
 scale = Vector2(2.01563, 1.90182)
+texture = ExtResource("5_v2fpr")
+
+[node name="Llum" type="PointLight2D" parent="CharacterBody2D/Sprite2D"]
+position = Vector2(0.496124, -2.62906)
 color = Color(0.996078, 0.819608, 0.72549, 1)
 shadow_enabled = true
-texture = SubResource("GradientTexture2D_y8e1x")
+texture = SubResource("GradientTexture2D_jkxq3")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/Llum"]
-position = Vector2(-0.496124, 5.31321)
-texture = ExtResource("5_v2fpr")
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+limit_left = 0
+limit_top = 0
+limit_right = 1150
+limit_bottom = 650
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.0862745, 0.0862745, 0.0862745, 1)
