@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://gyq4wje1jltr"]
+[gd_scene load_steps=10 format=3 uid="uid://gyq4wje1jltr"]
 
 [ext_resource type="Texture2D" uid="uid://bfdtlwqjaeovb" path="res://Joc_del_boletaire/Imatges/bg_castle.png" id="1_bj03o"]
 [ext_resource type="Texture2D" uid="uid://fy3evk17q86n" path="res://Joc_del_boletaire/Imatges/spritesheet.png" id="1_eh2d1"]
@@ -201,6 +201,17 @@ sources/1 = SubResource("TileSetAtlasSource_112pm")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uv317"]
 size = Vector2(47, 48)
 
+[sub_resource type="Gradient" id="Gradient_mkmxp"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_y8e1x"]
+gradient = SubResource("Gradient_mkmxp")
+width = 60
+height = 60
+fill = 1
+fill_from = Vector2(0.529915, 0.487179)
+fill_to = Vector2(0.987179, 1)
+
 [node name="Joc" type="Node2D"]
 
 [node name="Fons" type="Sprite2D" parent="."]
@@ -229,3 +240,14 @@ texture_filter = 1
 position = Vector2(-15, 338)
 scale = Vector2(3, 3)
 texture = ExtResource("3_thxji")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+
+[node name="Llum" type="PointLight2D" parent="."]
+texture_filter = 1
+position = Vector2(19, 320)
+scale = Vector2(2.01563, 2.07031)
+color = Color(0.996078, 0.819608, 0.72549, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_y8e1x")
